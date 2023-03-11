@@ -36,7 +36,7 @@ const getData = new Promise ((resolve,reject) =>{
 
 }  )
 
-// console.log (getData)
+console.log (getData)
 
 getData
 .then (data => console.log (data))
@@ -44,6 +44,23 @@ getData
 
 
 
+// ----------
+
+// const ride = new Promise ((resolve,reject) => {
+
+// if (arrived)
+// resolve ('Driver Arrived');
+
+// else {
+
+//     reject ('Driver Failed')
+// }
+
+// })
+
+// ride 
+// .then (data => console.log (data))
+// .catch (err => console.log ('Error'))
 
 
 

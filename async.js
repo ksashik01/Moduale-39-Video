@@ -17,3 +17,16 @@ function doSomething (){
 
 
 }
+
+
+let num = 0;
+ const interValId = setInterval( () => {
+
+ console.log (num++)
+
+ if (num ===20){
+    clearInterval (interValId);
+ }
+
+
+}, 2000 )
