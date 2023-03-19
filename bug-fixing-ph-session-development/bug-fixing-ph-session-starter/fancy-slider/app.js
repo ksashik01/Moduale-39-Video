@@ -4,6 +4,7 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const errormessage= document.getElementById('erorr-message');
 // selected image 
 let sliders = [];
 
@@ -37,7 +38,21 @@ const getImages = (query) => {
 
       // return console.log ("data info", data)
 
-     showImages(data.hits)
+if (data.hits.length>0){
+
+
+  const imagesArea = document.querySelector('.images');
+
+  imagesArea.style.display="none";
+  showImages(data.hits);
+
+  errormessage.innerHTML=""
+  
+}
+
+else {
+  errormessage.innerHTML ="data not found";
+}
      
      
  } )
