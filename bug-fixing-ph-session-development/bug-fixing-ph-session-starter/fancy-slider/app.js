@@ -55,7 +55,11 @@ const selectItem = (event, img) => {
   if (item === -1) {
     sliders.push(img);
   } else {
-    alert('Hey, Already added !')
+    // alert('Hey, Already added !')
+
+    sliders = sliders.filter (slider => slider !=img)
+    element.classList.remove('added');
+
   }
 }
 var timer
@@ -132,3 +136,14 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
+
+
+
+
+var input = document.getElementById("search");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("search-btn").click();
+  }
+});
